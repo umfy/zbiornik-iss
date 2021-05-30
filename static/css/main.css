@@ -2,7 +2,8 @@ body {
   font-family: sans-serif;
 }
 form {
-  margin: 30px;
+  margin-top: 0px;
+  margin-left: 30px;
 }
 center {
   margin-top: 100px;

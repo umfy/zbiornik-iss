@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 {% block head %}
-<ul class="nav justify-content-center">
+<ul class="mb-3 nav nav-tabs justify-content-center">
   <li class="nav-item">
-    <a class="nav-link" href="/base">Base Model</a>
+    <a class="nav-link active" href="/base">Base Model</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/pid">PID Control</a>
@@ -84,7 +84,12 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+      plugins: {
+          legend: {
+              display: false,
+          }
+      }
     }
 });
    </script>
