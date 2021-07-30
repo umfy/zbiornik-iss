@@ -21,7 +21,7 @@
       <input class='form-control' type='text' name='wspolczynnik_wyplywu' value='{{b if b else 0.2}}'>
 
       <label for='wysokosc_zbiornika'>Wysokość zbiornika [m]</label>
-      <input class='form-control' type='text' name='wysokosc_zbiornika' value='{{hmax if hmax else 5}}'>
+      <input class='form-control' type='text' name='wysokosc_zbiornika' value='{{hmax if hmax else 1.5}}'>
 
       <label for='pole_dna'>Pole powierzchni dna [m^2]</label>
       <input class='form-control' type='text' name='pole_dna' value='{{A if A else 2}}'>
@@ -33,7 +33,7 @@
       <input class='form-control' type='text' name='krok_symulacji' value='{{dt if dt else 0.5}}'>
 
       <label for='czas_symulacji'>Czas symulacji [hr]</label>
-      <input class='form-control' type='text' name='czas_symulacji' value='{{tf if tf else 20}}'>
+      <input class='form-control' type='text' name='czas_symulacji' value='{{tf if tf else 10}}'>
       
       <button type='submit' class='btn btn-primary mt-4'>Zatwierdź</button>
    </form>

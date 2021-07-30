@@ -37,7 +37,19 @@
 
       <label for='czas_symulacji'>Czas symulacji [hr]</label>
       <input class='form-control' type='text' name='czas_symulacji' value='{{tf if tf else 10}}'>
-            
+      
+      <label for='skala'>Skala </label>
+      <input class='form-control' type='text' name='skala' value='{{universe_scale if universe_scale else 1}}'>
+
+      <label for='kp'>Kp </label>
+      <input class='form-control' type='text' name='kp' value='{{kp if kp is defined else 3}}'>
+    
+      <label for='kd'>Kd </label>
+      <input class='form-control' type='text' name='kd' value='{{kd if kd is defined else 0.3}}'>
+     
+      <label for='mnoznik'>Mnożnik </label>
+      <input class='form-control' type='text' name='mnoznik' value='{{mnoznik if mnoznik else 10}}'>
+
       <button type='submit' class='btn btn-primary mt-4'>Zatwierdź</button>
    </form>
 </div>
@@ -49,6 +61,7 @@
 <script>
 let allLabels = {{labels}}
 let allValues = {{values}}
+let line_height = {{hz}}
 
 allLabels.forEach(function(part, index, theArray) {
   theArray[index] = part.toFixed(2);
@@ -90,7 +103,18 @@ var myChart = new Chart(ctx, {
           plugins: {
             legend: {
               display: false,
+            },
+          annotation: {
+          annotations: {
+            line1: {
+              type: 'line',
+              yMin: line_height ? line_height : 1,
+              yMax: line_height ? line_height : 1,
+              borderColor: 'rgb(255, 99, 132)',
+              borderWidth: 1,
             }
+          }
+        }
           }
     }
 });
